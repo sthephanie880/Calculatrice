@@ -1,0 +1,67 @@
+let  display = document.getElementById("display");
+let history = [];
+// Ajouter valeur
+function appendValue(value) {
+  display.value += value;
+}
+
+// Effacer tout
+function clearDisplay() {
+  display.value = "";
+}
+
+// Effacer un caractère
+function backspace() {
+  display.value = display.value.slice(0, -1);
+}
+
+// Calculer
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = "Erreur";
+  }
+}
+
+// Pourcentage
+function percent() {
+  if (display.value !== "") {
+    display.value = parseFloat(display.value) / 100;
+  }
+}
+
+// Changer signe +/-
+function toggleSign() {
+  if (display.value !== "") {
+    display.value = display.value * -1;
+  }
+}
+function squareRoot() {
+  let display = document.getElementById("display");
+  display.value = Math.sqrt(parseFloat(display.value));
+}
+
+function square() {
+  let display = document.getElementById("display");
+  display.value = Math.pow(parseFloat(display.value), 2);
+}
+
+function inverse() {
+  let display = document.getElementById("display");
+  display.value = 1 / parseFloat(display.value);
+}
+function sin() {
+  let display = document.getElementById("display");
+  display.value = Math.sin(parseFloat(display.value));
+}
+
+function cos() {
+  let display = document.getElementById("display");
+  display.value = Math.cos(parseFloat(display.value));
+}
+
+function tan() {
+  let display = document.getElementById("display");
+  display.value = Math.tan(parseFloat(display.value));
+}
